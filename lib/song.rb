@@ -39,4 +39,15 @@ attr_accessor :name, :artist, :genre
     return genre_count
   end
 
+  def self.artist_count
+  artist_count ={}
+    @@artists.each do |element|
+      if artist_count[element]
+         artist_count[element] += 1
+      else artist_count[element] = 1
+      end
+    end
+    return artist_count
+  end
+
 end
