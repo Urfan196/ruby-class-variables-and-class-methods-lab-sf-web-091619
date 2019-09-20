@@ -31,12 +31,12 @@ attr_accessor :name, :artist, :genre
   def self.genre_count
   genre_count ={}
     @@genres.each do |element|
-    binding.pry
-      if @@genres[element] += 1
-      else genre_count = 1
+      if genre_count[element]
+         genre_count[element] += 1
+      else genre_count[element] = 1
       end
-      binding.pry
     end
+    return genre_count
   end
 
 end
